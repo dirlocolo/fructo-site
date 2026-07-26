@@ -1,0 +1,29 @@
+---
+import { mainNav, servicesNav } from '../data/nav';
+---
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="/" class="site-header__logo">Fructo</a>
+    <nav aria-label="Navigation principale">
+      <ul class="main-nav">
+        {mainNav.map((link) => (
+          link.label === 'Services' ? (
+            <li class="main-nav__item main-nav__item--has-submenu">
+              <a href={link.href}>{link.label}</a>
+              <ul class="main-nav__submenu">
+                {servicesNav.map((sub) => (
+                  <li><a href={sub.href}>{sub.label}</a></li>
+                ))}
+              </ul>
+            </li>
+          ) : (
+            <li class="main-nav__item">
+              <a href={link.href}>{link.label}</a>
+            </li>
+          )
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>

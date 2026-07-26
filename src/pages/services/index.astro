@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { servicesNav } from '../../data/nav';
+---
+
+<BaseLayout title="Services">
+  <h1>Services</h1>
+  <ul>
+    {servicesNav.map((link) => (
+      <li><a href={link.href}>{link.label}</a></li>
+    ))}
+  </ul>
+</BaseLayout>

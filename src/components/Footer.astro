@@ -1,0 +1,17 @@
+---
+import { footerNav } from '../data/nav';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <nav aria-label="Navigation de pied de page">
+      <ul class="main-nav">
+        {footerNav.map((link) => (
+          <li class="main-nav__item"><a href={link.href}>{link.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <p>&copy; {year} Fructo</p>
+  </div>
+</footer>
