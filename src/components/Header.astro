@@ -13,9 +13,8 @@ const isCurrent = (href: string) =>
       <li><a href="/" aria-current={isCurrent("/") ? "page" : undefined}>Accueil</a></li>
       <li>
         <details class="services-menu">
-          <summary>Services</summary>
+          <summary><a href="/services/" aria-current={pathname === "/services/" ? "page" : undefined}>Services</a></summary>
           <ul>
-            <li><a href="/services/" aria-current={pathname === "/services/" ? "page" : undefined}>Tous les services</a></li>
             <li><a href="/services/contacts-interesses/" aria-current={isCurrent("/services/contacts-interesses/") ? "page" : undefined}>Contacts Intéressés</a></li>
             <li><a href="/services/saas-operator/" aria-current={isCurrent("/services/saas-operator/") ? "page" : undefined}>SaaS Operator</a></li>
             <li><a href="/services/saas-power/" aria-current={isCurrent("/services/saas-power/") ? "page" : undefined}>SaaS Power</a></li>
