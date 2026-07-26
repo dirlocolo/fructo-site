@@ -1,28 +1,27 @@
 ---
 const pathname = Astro.url.pathname;
-
-const isCurrent = (href: string) =>
-  href === "/" ? pathname === href : pathname.startsWith(href);
+const isCurrent = (href: string) => href === "/" ? pathname === href : pathname.startsWith(href);
 ---
 
 <header class="site-header">
-  <a class="brand" href="/">Fructo</a>
-
-  <nav aria-label="Navigation principale">
-    <ul class="main-navigation">
-      <li><a href="/" aria-current={isCurrent("/") ? "page" : undefined}>Accueil</a></li>
-      <li>
-        <details class="services-menu">
-          <summary><a href="/services/" aria-current={pathname === "/services/" ? "page" : undefined}>Services</a></summary>
-          <ul>
-            <li><a href="/services/contacts-interesses/" aria-current={isCurrent("/services/contacts-interesses/") ? "page" : undefined}>Contacts Intéressés</a></li>
-            <li><a href="/services/saas-operator/" aria-current={isCurrent("/services/saas-operator/") ? "page" : undefined}>SaaS Operator</a></li>
-            <li><a href="/services/saas-power/" aria-current={isCurrent("/services/saas-power/") ? "page" : undefined}>SaaS Power</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a href="/outils/" aria-current={isCurrent("/outils/") ? "page" : undefined}>Outils</a></li>
-      <li><a href="/contact/" aria-current={isCurrent("/contact/") ? "page" : undefined}>Contact</a></li>
-    </ul>
-  </nav>
+  <div class="site-header__inner container">
+    <a class="brand" href="/" aria-label="Fructo — Accueil">Fructo</a>
+    <nav aria-label="Navigation principale">
+      <ul class="main-navigation">
+        <li><a href="/" aria-current={isCurrent("/") ? "page" : undefined}>Accueil</a></li>
+        <li>
+          <details class="services-menu">
+            <summary><a href="/services/" aria-current={pathname === "/services/" ? "page" : undefined}>Services</a></summary>
+            <ul>
+              <li><a href="/services/contacts-interesses/" aria-current={isCurrent("/services/contacts-interesses/") ? "page" : undefined}>Contacts Intéressés</a></li>
+              <li><a href="/services/saas-operator/" aria-current={isCurrent("/services/saas-operator/") ? "page" : undefined}>SaaS Operator</a></li>
+              <li><a href="/services/saas-power/" aria-current={isCurrent("/services/saas-power/") ? "page" : undefined}>SaaS Power</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="/outils/" aria-current={isCurrent("/outils/") ? "page" : undefined}>Outils</a></li>
+        <li><a class="nav-contact" href="/contact/" aria-current={isCurrent("/contact/") ? "page" : undefined}>Contact</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>

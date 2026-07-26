@@ -3,5 +3,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Accueil">
-  <h1>Accueil</h1>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Acquisition · SaaS · Exécution</span>
+      <h1>Faire avancer ce qui compte.</h1>
+      <p class="lead">Fructo accompagne les entreprises B2B avec des offres claires, pensées pour transformer les priorités en résultats concrets.</p>
+      <div class="actions">
+        <a class="button button--primary" href="/services/">Découvrir les services</a>
+        <a class="button button--secondary" href="/contact/">Parler de votre projet</a>
+      </div>
+    </div>
+  </section>
+  <section class="section section--tinted">
+    <div class="container">
+      <span class="eyebrow">Les offres Fructo</span>
+      <h2>Un cadre simple pour mieux exécuter.</h2>
+      <div class="cards">
+        <article class="card"><span class="card__number">01</span><h3>Contacts Intéressés</h3><p>Une offre dédiée à l’acquisition de contacts B2B.</p></article>
+        <article class="card"><span class="card__number">02</span><h3>SaaS Operator</h3><p>Un accompagnement orienté opérations et exécution.</p></article>
+        <article class="card"><span class="card__number">03</span><h3>SaaS Power</h3><p>Des ressources pour soutenir la progression des équipes SaaS.</p></article>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
